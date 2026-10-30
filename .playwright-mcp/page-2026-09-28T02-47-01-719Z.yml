@@ -1,0 +1,20 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e4]:
+    - text:  You logged into a secure area!
+    - link "×" [ref=f2e5] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=f2e6]:
+    - link "Fork me on GitHub":
+      - /url: https://github.com/tourdedave/the-internet
+      - img "Fork me on GitHub" [ref=f2e7] [cursor=pointer]
+    - generic [ref=f2e9]:
+      - heading "Secure Area" [level=2] [ref=f2e10]
+      - heading "Welcome to the Secure Area. When you are done click logout below." [level=4] [ref=f2e11]
+      - link "Logout" [ref=f2e12] [cursor=pointer]:
+        - /url: /logout
+  - generic [ref=f2e14]:
+    - separator [ref=f2e15]
+    - generic [ref=f2e16]:
+      - text: Powered by
+      - link "Elemental Selenium" [ref=f2e17] [cursor=pointer]:
+        - /url: http://elementalselenium.com/

@@ -1,0 +1,35 @@
+name: Cucumber Playwright Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out Playwright_tutorial
+        uses: actions/checkout@v4
+        with:
+          repository: KamaleshRepos/Playwright_tutorial
+          ref: ${{ github.ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Check Cucumber step definitions
+        run: npm run test:dry-run
+
+      - name: Run Cucumber browser tests
+        run: npm test
