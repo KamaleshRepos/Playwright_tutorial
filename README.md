@@ -33,4 +33,21 @@ Run the browser tests:
 npm test
 ```
 
+The cases are also available as native Playwright tests. Run them in Playwright UI
+mode to inspect and step through each test:
+
+```sh
+npm run test:ui
+```
+
+To run those native Playwright tests without opening the UI:
+
+```sh
+npm run test:playwright
+```
+
+`npm test` continues to run the existing Cucumber scenarios. Playwright UI mode
+does not discover Gherkin `.feature` files directly; the matching native tests
+are in `tests/first-five.spec.js`.
+
 Set `BASE_URL` to run against another deployment of The Internet. The default is `https://the-internet.herokuapp.com`.
